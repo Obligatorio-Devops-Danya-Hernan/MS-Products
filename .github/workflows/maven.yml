@@ -39,4 +39,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-east-1'
           aws-bucket: ${{ secrets.AWS_BUCKET }}
-          file-path: 'target/products-service-example-0.0.1.jar'
+          file-path: 'target/products-service-example-0.0.1-spring-boot.jar'
