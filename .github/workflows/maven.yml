@@ -35,11 +35,13 @@ jobs:
     - name: Debug
       run: ls -l /home/runner/work/MS-Products/MS-Products/target
     - uses: jakejarvis/s3-sync-action@master
+
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-east-1'  
         SOURCE_DIR: '/home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar'     
+    - run: ls -l /github/workspace
 
 
