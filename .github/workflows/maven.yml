@@ -39,6 +39,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
         aws-bucket: ${{ secrets.AWS_BUCKET }}
+        file-path: '/home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar'
 
 
 
