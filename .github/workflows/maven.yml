@@ -31,7 +31,9 @@ jobs:
 #        files: target/
 #        name: Hernan M Calisto
 #        email: hernantvg@gmail.com
-    - uses: actions/checkout@master
+#    - uses: actions/checkout@master
+    - name: Debug
+      run: pwd & ls -l
     - uses: jakejarvis/s3-sync-action@master
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET }}
