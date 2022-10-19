@@ -32,6 +32,9 @@ jobs:
 #        name: Hernan M Calisto
 #        email: hernantvg@gmail.com
 #    - uses: actions/checkout@master
+    - uses: szenius/set-timezone@v1.0
+      with:
+       timezoneLinux: "America/Montevideo"
 
     - name: Set current date as env variable
       run: | 
