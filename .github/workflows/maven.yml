@@ -33,7 +33,7 @@ jobs:
 #        email: hernantvg@gmail.com
 #    - uses: actions/checkout@master
     - name: Debug
-      run: pwd & ls -l
+      run: ls -l /home/runner/work/MS-Products/MS-Products/target
     - uses: jakejarvis/s3-sync-action@master
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET }}
