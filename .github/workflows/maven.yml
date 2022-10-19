@@ -32,8 +32,11 @@ jobs:
 #        name: Hernan M Calisto
 #        email: hernantvg@gmail.com
 #    - uses: actions/checkout@master
+
     - name: Set current date as env variable
-      run: echo "$(date +'%d-%m-%Y_%T')" >> $GITHUB_ENV
+      run: | 
+       export DATE=build-$(date +'%d-%m-%Y_%T')
+       echo "DATE=$DATE" >> $GITHUB_ENV
 
     - uses: hkusu/s3-upload-action@v2
       with:
@@ -42,7 +45,7 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
         aws-bucket: ${{ secrets.AWS_BUCKET }}
         bucket-root: jars-ms-products
-        destination-dir: format('build-', $GITHUB_ENV) 
+        destination-dir: format('build-', ${{ env.DATE }}) 
         file-path: '/home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar'
 
 
