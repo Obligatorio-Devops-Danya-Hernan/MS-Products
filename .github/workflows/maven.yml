@@ -31,10 +31,9 @@ jobs:
 #        files: target/
 #        name: Hernan M Calisto
 #        email: hernantvg@gmail.com
-    - name: Chekout master
-    - uses: actions/checkout@master
     
     - name: Upload Jars
+    - uses: actions/checkout@master
     - uses: shallwefootball/s3-upload-action@master
       with:
         aws_key_id: ${{ secrets.AWS_KEY_ID }}
