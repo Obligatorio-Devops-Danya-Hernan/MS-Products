@@ -3,7 +3,6 @@ name: notify releases via telegram
 on:
   push:
     branches: [ "master" ]
-    
 jobs:
   build:
     name: Build
