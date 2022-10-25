@@ -52,6 +52,6 @@ jobs:
        
     - name: Copy files to the test website with the AWS CLI
       run: |
-        aws s3 sync /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar s3://${{ secrets.AWS_BUCKET }}
+        aws s3 sync /home/runner/work/MS-Products/MS-Products/target s3://${{ secrets.AWS_BUCKET }}
 
 
