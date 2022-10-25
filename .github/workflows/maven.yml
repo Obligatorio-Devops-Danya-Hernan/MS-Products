@@ -48,9 +48,9 @@ jobs:
       run: | 
        export DATE=build-$(date +'%d-%m-%Y_%T')
        echo "DATE=$DATE" >> $GITHUB_ENV
-       mkdir -p ~/deploys/jars-ms-products/${{ env.DATE }}/
-       env
-       cp /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar ~/deploys/jars-ms-products/${{ env.DATE }}/    
+       mkdir -p ~/deploys/jars-ms-products/$DATE
+       ls -l  ~/deploys/jars-ms-products
+       cp /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar ~/deploys/jars-ms-products/$DATE/    
        
     - name: Copy files to the test website with the AWS CLI
       run: |
