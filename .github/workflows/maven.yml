@@ -44,14 +44,15 @@ jobs:
         aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
         aws-region: ${{ secrets.AWS_REGION }}
         
-    - name: Set current date as env variable
+    - name: Set current date as env variable and create jars folder
       run: | 
        export DATE=build-$(date +'%d-%m-%Y_%T')
        echo "DATE=$DATE" >> $GITHUB_ENV
-       
+       mkdir -p ~/jars-ms-products/${{ env.DATE }}
+       cp /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar ~/jars-ms-products/${{ env.DATE }}/    
        
     - name: Copy files to the test website with the AWS CLI
       run: |
-        aws s3 sync /home/runner/work/MS-Products/MS-Products/target s3://${{ secrets.AWS_BUCKET }}
+        aws s3 sync ~/jars-ms-products s3://${{ secrets.AWS_BUCKET }}
 
 
