@@ -38,15 +38,15 @@ jobs:
 
     - name: Set current date as env variable
       run: | 
-       - mkdir ~/.aws/
-       - echo "[default]" > ~/.aws/credentials
-       - echo "aws_access_key_id=ASIAWA6TPAXSXLSPJAOA" >> ~/.aws/credentials
-       - echo "aws_secret_access_key=6PipzGst/o15nRm6kfddwpA8cAOjruuHOoKyWhRt" >> ~/.aws/credentials
-       - echo "aws_session_token=FwoGZXIvYXdzEAAaDNiFTGsrxMQx20RL2yK2AV0cfW4lMlycZwPLolXVLxr5Q3a6Mz8b9//NSyEBZwfTSbWqmBmy1xTpFlC9PjKkuMoEM8PEvY2q9R6NYvMLJdfHY0YBzsBox27EgJniTBfYT5CGWC2PFgf9Mx3FLESHm6v4W9cGkR3z8LNKGLZOD6AgsrRs9aAfUGY3gMmB4JYGOx3RRWEm7xRC8GSVQXg0SWGrcWEp28NbsaWD6fST/5LTyoV2zOMEnT4+FUJGeDxOezqhDVdNKJKn3JoGMi3pFOOXHIVkOOlGVFe/0cHSUQdQZC5Wmf1neHFoKbQI6EFKFJbOemTsR4+Nbso=" >> ~/.aws/credentials
-       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-       - unzip awscliv2.zip
-       - sudo ./aws/install
-       - aws s3 ls
+       mkdir -p ~/.aws/
+       echo "[default]" > ~/.aws/credentials
+       echo "aws_access_key_id=ASIAWA6TPAXSXLSPJAOA" >> ~/.aws/credentials
+       echo "aws_secret_access_key=6PipzGst/o15nRm6kfddwpA8cAOjruuHOoKyWhRt" >> ~/.aws/credentials
+       echo "aws_session_token=FwoGZXIvYXdzEAAaDNiFTGsrxMQx20RL2yK2AV0cfW4lMlycZwPLolXVLxr5Q3a6Mz8b9//NSyEBZwfTSbWqmBmy1xTpFlC9PjKkuMoEM8PEvY2q9R6NYvMLJdfHY0YBzsBox27EgJniTBfYT5CGWC2PFgf9Mx3FLESHm6v4W9cGkR3z8LNKGLZOD6AgsrRs9aAfUGY3gMmB4JYGOx3RRWEm7xRC8GSVQXg0SWGrcWEp28NbsaWD6fST/5LTyoV2zOMEnT4+FUJGeDxOezqhDVdNKJKn3JoGMi3pFOOXHIVkOOlGVFe/0cHSUQdQZC5Wmf1neHFoKbQI6EFKFJbOemTsR4+Nbso=" >> ~/.aws/credentials
+       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+       unzip awscliv2.zip
+       sudo ./aws/install
+       aws s3 ls
        
 
 
