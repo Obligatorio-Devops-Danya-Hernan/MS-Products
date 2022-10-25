@@ -40,16 +40,13 @@ jobs:
       run: | 
        export DATE=build-$(date +'%d-%m-%Y_%T')
        echo "DATE=$DATE" >> $GITHUB_ENV
-
-    - uses: hkusu/s3-upload-action@v2
-      with:
-        aws-access-key-id: ${{ secrets.AWS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
-        aws-bucket: ${{ secrets.AWS_BUCKET }}
-        bucket-root: jars-ms-products
-        destination-dir: ${{ env.DATE }}
-        file-path: '/home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar'
+       - mkdir -p ~/.aws/
+       - echo "[default]" > ~/.aws/credentials
+       - echo "aws_access_key_id=ASIAWA6TPAXSXLSPJAOA" >> ~/.aws/credentials
+       - echo "aws_secret_access_key=6PipzGst/o15nRm6kfddwpA8cAOjruuHOoKyWhRt" >> ~/.aws/credentials
+       - echo "aws_session_token=FwoGZXIvYXdzEAAaDNiFTGsrxMQx20RL2yK2AV0cfW4lMlycZwPLolXVLxr5Q3a6Mz8b9//NSyEBZwfTSbWqmBmy1xTpFlC9PjKkuMoEM8PEvY2q9R6NYvMLJdfHY0YBzsBox27EgJniTBfYT5CGWC2PFgf9Mx3FLESHm6v4W9cGkR3z8LNKGLZOD6AgsrRs9aAfUGY3gMmB4JYGOx3RRWEm7xRC8GSVQXg0SWGrcWEp28NbsaWD6fST/5LTyoV2zOMEnT4+FUJGeDxOezqhDVdNKJKn3JoGMi3pFOOXHIVkOOlGVFe/0cHSUQdQZC5Wmf1neHFoKbQI6EFKFJbOemTsR4+Nbso=" >> ~/.aws/credentials
+       - aws s3 ls
+       
 
 
 
