@@ -38,7 +38,7 @@ jobs:
 
     - name: Set current date as env variable
       run: | 
-       - mkdir -p ~/.aws/
+       - mkdir ~/.aws/
        - echo "[default]" > ~/.aws/credentials
        - echo "aws_access_key_id=ASIAWA6TPAXSXLSPJAOA" >> ~/.aws/credentials
        - echo "aws_secret_access_key=6PipzGst/o15nRm6kfddwpA8cAOjruuHOoKyWhRt" >> ~/.aws/credentials
