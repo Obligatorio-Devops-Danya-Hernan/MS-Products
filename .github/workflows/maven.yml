@@ -48,18 +48,10 @@ jobs:
       run: | 
        export DATE=build-$(date +'%d-%m-%Y_%T')
        echo "DATE=$DATE" >> $GITHUB_ENV
-
-    - uses: hkusu/s3-upload-action@v2
-      with:
-        aws-access-key-id: ${{ env.AWS_KEY_ID }}
-        aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ env.AWS_REGION }}
-        aws-bucket: ${{ secrets.AWS_BUCKET }}
-        bucket-root: jars-ms-products
-        destination-dir: ${{ env.DATE }}
-        file-path: '/home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar'
-     
-
-
+       
+       
+    - name: Copy files to the test website with the AWS CLI
+      run: |
+        aws s3 sync /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar s3://${{ secrets.AWS_BUCKET }}
 
 
