@@ -1,4 +1,4 @@
-name: notify releases via telegram
+name: Notify releases via telegram
 
 on:
   push:
