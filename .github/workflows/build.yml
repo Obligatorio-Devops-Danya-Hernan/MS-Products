@@ -24,5 +24,5 @@ jobs:
     - name: Upload Package
       uses: actions/upload-artifact@v3
       with:
-       name: products:latest
+       name: products
        path: /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar
