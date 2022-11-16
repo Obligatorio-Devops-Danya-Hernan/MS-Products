@@ -20,9 +20,9 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml   
-      
+
     - name: Upload Package
     - uses: actions/upload-artifact@v3
       with:
-        name: products:latest
-        path: /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar
+       name: products:latest
+       path: /home/runner/work/MS-Products/MS-Products/target/products-service-example-0.0.1-spring-boot.jar
