@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>uy.edu.ort.devops</groupId>
 	<artifactId>products-service-example</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<name>products-service-example</name>
 	<description>Demo project for migrating Monolith to Microservices</description>
 	<properties>
